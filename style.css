@@ -128,12 +128,13 @@ body {
 .bookmarks {
   display: flex;
   gap: 2rem;
-  cursor: pointer;
 }
 
 .bookmark {
   cursor: pointer;
   fill: #8385a9;
+  height: 2rem;
+  width: 2rem;
 }
 
 .bookmark:hover {

@@ -3,6 +3,11 @@ const minuteesEl = document.getElementById("time-box-minutees");
 const secondsEl = document.getElementById("time-box-seconds");
 const ampmEl = document.getElementById("time-box-am-pm");
 const timePeriod = document.getElementById("time-period");
+const name = document.getElementById("name");
+
+name.innerText = localStorage.getItem("name")
+  ? localStorage.getItem("name")
+  : "call setName(<name>)";
 
 const updateTime = () => {
   let time = new Date().toLocaleTimeString("en-US", {
@@ -35,4 +40,10 @@ const updateTime = () => {
   } else timePeriod.innerText = "Morning";
 };
 
+const SETNAME = (name) => {
+  localStorage.setItem("name", name);
+  window.location.reload();
+};
+
+updateTime();
 window.setInterval(() => updateTime(), 1000);
